@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/robots", (req, res) => {
   try {
+    rollbar.info(`Someone picked a bot!`);
     res.status(200).send(botsArr);
   } catch (error) {
     console.log("ERROR GETTING BOTS", error);
@@ -34,6 +35,7 @@ app.get("/api/robots/five", (req, res) => {
     let shuffled = shuffleArray(bots);
     let choices = shuffled.slice(0, 5);
     let compDuo = shuffled.slice(6, 8);
+    rollbar.info(`Someone drew 5!`);
     res.status(200).send({ choices, compDuo });
   } catch (error) {
     console.log("ERROR GETTING FIVE BOTS", error);
