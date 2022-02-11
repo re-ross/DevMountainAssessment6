@@ -30,7 +30,7 @@ test("Draw button -> choices", async () => {
   await driver.sleep(5000);
 });
 
-test("adding a bot with add to duo button", async () => {
+test("adding a bot -> add to duo", async () => {
   const drawButton = await driver.findElement(By.id("draw"));
   await drawButton.click();
   const botBtn = await driver.findElement(By.className("bot-btn"));
